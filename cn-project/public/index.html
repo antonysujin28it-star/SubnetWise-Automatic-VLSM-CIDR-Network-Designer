@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SubnetWise — Automatic VLSM/CIDR Network Designer</title>
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='16' y='16' width='6' height='6' rx='1'/><rect x='2' y='16' width='6' height='6' rx='1'/><rect x='9' y='2' width='6' height='6' rx='1'/><path d='M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3'/><path d='M12 12V8'/></svg>">
+
+  <!-- Vendor Libraries (Offline-ready) -->
+  <script src="/vendor/react.min.js"></script>
+  <script src="/vendor/react-dom.min.js"></script>
+  <script src="/vendor/htm.js"></script>
+  <script src="/vendor/tailwind.js"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    if (window.tailwind) {
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontSize: {
+              '2xs': '0.6875rem',
+              '3xs': '0.625rem'
+            },
+            boxShadow: {
+              '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+              'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+              'card': '0 1px 2px 0 rgba(15, 23, 42, 0.04)'
+            }
+          }
+        }
+      };
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Error Boundary Logger -->
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('SubnetWise Error:', e.message, e.filename, e.lineno);
+      var errEl = document.getElementById('runtime-error');
+      if (errEl) {
+        errEl.style.display = 'block';
+        errEl.innerHTML = '<strong>Error loading application:</strong> ' + e.message + ' (Line: ' + e.lineno + ')';
+      }
+    });
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+  
+  <div id="runtime-error" style="display:none; padding: 12px 20px; background: #fef2f2; border-bottom: 1px solid #f87171; color: #991b1b; font-size: 13px; font-family: sans-serif;"></div>
+
+  <div id="root">
+    <!-- Initial Loading State -->
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif; color: #475569;">
+      <div style="text-align: center;">
+        <div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 6px;">SubnetWise</div>
+        <div style="font-size: 13px; color: #64748b;">Initializing network designer workspace...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unified Application Bundle -->
+  <script src="/js/bundle.js"></script>
+</body>
+</html>

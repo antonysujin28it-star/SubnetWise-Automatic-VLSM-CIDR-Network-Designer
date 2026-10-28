@@ -1,0 +1,20 @@
+{
+  "name": "subnetwise",
+  "version": "1.0.0",
+  "description": "SubnetWise — Automatic VLSM/CIDR Network Designer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node src/tests/test-engine.js"
+  },
+  "keywords": [
+    "networking",
+    "vlsm",
+    "cidr",
+    "subnetting",
+    "ipv4",
+    "computer-networks"
+  ],
+  "author": "SubnetWise Team",
+  "license": "MIT"
+}
